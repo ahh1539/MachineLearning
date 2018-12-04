@@ -2,6 +2,7 @@
 @name Alexander Hurley
 @project Iris Flower Identification Machine Learning
 @date 12/4/2018
+tutorial link: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 """
 import sys
 print('Python: {}'.format(sys.version))
