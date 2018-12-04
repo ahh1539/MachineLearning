@@ -5,15 +5,9 @@
 tutorial link: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 """
 import sys
-# scipy
 import scipy
-# numpy
 import numpy
-# matplotlib
 import matplotlib
-# pandas
-import pandas
-# scikit-learn
 import sklearn
 
 import pandas
@@ -41,7 +35,6 @@ def version():
 
 
 
-
 def statistics(dataset):
     # shape
     print(dataset.shape)
@@ -63,6 +56,12 @@ def statistics(dataset):
 def graphs(dataset):
     # box and whisker plots
     dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+    plt.show()
+    # Scatterplot
+    scatter_matrix(dataset)
+    plt.show()
+    # Histogram
+    dataset.hist()
     plt.show()
 
 
@@ -102,6 +101,7 @@ def machineLearning(dataset):
         names.append(name)
         msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
         print(msg)
+
 
 
 def main():
