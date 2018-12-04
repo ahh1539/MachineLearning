@@ -36,13 +36,26 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 
-# Load dataset
+# This loads the dataset from the online link
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = pandas.read_csv(url, names=names)
 
+
+"""
+Prints out the number of data sets rows and the number
+of categories in each data set as columns (rows, columns)
+"""
 # shape
 print(dataset.shape)
 
+"""
+Prints out the first x amount of rows of data
+"""
 # head
-print(dataset.head(20))
+x = 20
+print(dataset.head(x))
+
+"""Prints out the statistical data for the dataset"""
+# descriptions
+print(dataset.describe())
