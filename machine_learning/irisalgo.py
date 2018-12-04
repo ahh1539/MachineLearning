@@ -5,22 +5,16 @@
 tutorial link: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 """
 import sys
-print('Python: {}'.format(sys.version))
 # scipy
 import scipy
-print('scipy: {}'.format(scipy.__version__))
 # numpy
 import numpy
-print('numpy: {}'.format(numpy.__version__))
 # matplotlib
 import matplotlib
-print('matplotlib: {}'.format(matplotlib.__version__))
 # pandas
 import pandas
-print('pandas: {}'.format(pandas.__version__))
 # scikit-learn
 import sklearn
-print('sklearn: {}'.format(sklearn.__version__))
 
 import pandas
 from pandas.plotting import scatter_matrix
@@ -37,6 +31,16 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 #url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
+
+
+
+def version():
+    print('Python: {}'.format(sys.version))
+    print('scipy: {}'.format(scipy.__version__))
+    print('numpy: {}'.format(numpy.__version__))
+    print('matplotlib: {}'.format(matplotlib.__version__))
+    print('pandas: {}'.format(pandas.__version__))
+    print('sklearn: {}'.format(sklearn.__version__))
 
 
 
@@ -80,6 +84,7 @@ def machineLearning(dataset):
 
 def main():
     # This loads the dataset from the online line
+    #version()
     names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
     f = open("iris.csv")
     dataset = pandas.read_csv(f, names=names)
