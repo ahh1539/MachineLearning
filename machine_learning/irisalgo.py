@@ -35,11 +35,14 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
+#url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 
-# This loads the dataset from the online link
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
+
+# This loads the dataset from the online line
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
+f = open("iris.csv")
+dataset = pandas.read_csv(f, names=names)
+
 
 
 """
@@ -56,6 +59,33 @@ Prints out the first x amount of rows of data
 x = 20
 print(dataset.head(x))
 
-"""Prints out the statistical data for the dataset"""
+"""
+Prints out the statistical data for the dataset
+"""
 # descriptions
-print(dataset.describe())
+#print(dataset.describe())
+
+"""
+Prints out the different classifications of the dataset
+"""
+# class distribution
+print(dataset.groupby('class').size())
+
+"""
+Box and whisker graphs of dataset
+"""
+# box and whisker plots
+#dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+#plt.show()
+
+"""
+Training data set 80% used to train, 20% used to test accuracy
+"""
+# Split-out validation dataset
+array = dataset.values
+X = array[:,0:4]
+Y = array[:,4]
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+
