@@ -68,13 +68,15 @@ def statistics(dataset):
 """
 Training data set 80% used to train, 20% used to test accuracy
 """
-# Split-out validation dataset
-array = dataset.values
-X = array[:,0:4]
-Y = array[:,4]
-validation_size = 0.20
-seed = 7
-X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+def machineLearning(dataset):
+    # Split-out validation dataset
+    array = dataset.values
+    X = array[:,0:4]
+    Y = array[:,4]
+    validation_size = 0.20
+    seed = 7
+    X_train, X_validation, Y_train, Y_validation = \
+        model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 
 def main():
     # This loads the dataset from the online line
@@ -82,5 +84,7 @@ def main():
     f = open("iris.csv")
     dataset = pandas.read_csv(f, names=names)
     statistics(dataset)
+    machineLearning(dataset)
 
-def if __name__ == '__main__':
+if __name__ == '__main__':
+    main()
