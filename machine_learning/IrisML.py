@@ -17,7 +17,7 @@ print(iris.target_names)
 # label 0 == setosa, label 1 == versicolor, label 2 == virginica
 print(iris.target[0])
 
-test_idx = [0, 50, 100 ]
+test_idx = [0, 50, 100]
 
 #training data
 train_target = np.delete(iris.target, test_idx)
