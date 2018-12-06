@@ -109,7 +109,7 @@ def main():
     names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
     f = open("iris.csv")
     dataset = pandas.read_csv(f, names=names)
-    # version()
+    #version()
     #graphs(dataset)
     statistics(dataset)
     machineLearning(dataset)
