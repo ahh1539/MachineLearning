@@ -103,7 +103,6 @@ def machineLearning(dataset):
         print(msg)
 
 
-
 def main():
     # This loads the dataset from the online line
     names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
