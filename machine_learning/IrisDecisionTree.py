@@ -1,6 +1,7 @@
 """
 @name Alexander Hurley
 @project Iris Flower Identification Machine Learning
+Google project
 @date 12/5/2018
 """
 import sklearn
@@ -44,6 +45,7 @@ for item in test_target:
     else:
         actual += "virginica, "
 print("Actual Results:", actual)
+
 
 #print("Predicted Results Numerical:", clf.predict(test_data))
 predicted = ""
